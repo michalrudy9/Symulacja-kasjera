@@ -9,20 +9,20 @@ class Grafika:
         self.kliknietyTowarFunkcja = kliknietyTowarFunkcja
         self.zwazFunkcja = zwazFunkcja
 
-        self.ramkaStracone = Frame(master=self.root)
+        self.ramkaPrzegrales = Frame(master=self.root)
         self.ramkaKoncowe = Frame(master=self.root)
 
         self.linia = Canvas(root, height=500, width=1000)
         self.linia.create_line(500, 0, 500, 500)
         self.linia.grid()
 
-        self.sprobujPonownie = Button(master=self.ramkaStracone, text='Sprobój ponownie', command=lambda: self.sprobujPonownieFunkcja())
+        self.sprobujPonownie = Button(master=self.ramkaPrzegrales, text='Sprobój ponownie', command=lambda: self.sprobujPonownieFunkcja())
         self.sprobujPonownie.place(x=400, y=400, height=60, width=200)
 
-        self.przegrales = Label(master=self.ramkaStracone, text='Przegrałeś!')
+        self.przegrales = Label(master=self.ramkaPrzegrales, text='Przegrałeś!')
         self.przegrales.place(x=450, y=200, height=60, width=100)
 
-        self.info = Label(master=self.ramkaStracone, text='Wartość pola tekstowego po prawej stronie przewyższa liczebność towaru!')
+        self.info = Label(master=self.ramkaPrzegrales, text='Wartość pola tekstowego po prawej stronie przewyższa liczebność towaru!')
         self.info.place(x=250, y=250, height=60, width=500)
 
         self.sprobujPonownieKoniec = Button(master=self.ramkaKoncowe, text='Sprobój ponownie', command=lambda: self.sprobujPonownieKoniecFunkcja())
@@ -143,7 +143,7 @@ class Grafika:
         for i in range(10):
             self.finallyCreatedButton[i].place_forget()
 
-        self.ramkaStracone.place(x=0, y=0, height=500, width=1000)
+        self.ramkaPrzegrales.place(x=0, y=0, height=500, width=1000)
 
     def pokazKoniecInformacje(self, wynikSrednia):
         """Metoda wyświetla informacje o końcu programu"""
@@ -162,7 +162,7 @@ class Grafika:
 
     def ukryjPrzegralesInformacje(self):
         """Metoda ukrywa informacje o przegranej"""
-        self.ramkaStracone.pack_forget()
+        self.ramkaPrzegrales.pack_forget()
         self.przegrales.place_forget()
         self.sprobujPonownie.place_forget()
         self.info.place_forget()
@@ -191,7 +191,6 @@ class Grafika:
             self.finallyCreatedButton[i].place(x=positionX, y=positionY, height=60, width=60)
             positionX += 60
         positionX = 600
-        #positionY += 60
         self.finallyCreatedButton[len(self.finallyCreatedButton) - 1].place(x=positionX, y=positionY, height=60, width=180)
 
         self.wyczysc.place(x=780, y=140, height=60, width=120)
