@@ -173,6 +173,6 @@ def koniecFunkcja():
    koniec = True
    czas = round(time.perf_counter() - czasStartu)
    srednia = czas/20
-   grafika.pokazPrzegralesInformacje(srednia)
+   grafika.pokazKoniecInformacje(srednia)
 
 main()
