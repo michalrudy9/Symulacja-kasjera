@@ -10,6 +10,6 @@ class TowarNaSztuki(Towar):
         self.ilosc = self.getIlosc()
 
     def getIlosc(self):
-        """Metoda zwraca ilość towaru prawdopodobieństwem 50% na wyslosownaie towaru na sztuki lub towaru na wagę"""
+        """Metoda zwraca ilość towaru prawdopodobieństwem 50% na wyslosownaie towaru pojedynczego lub z zakresu od 1 do 50"""
         jestWiecejNizJeden = random.choice([True, False])
         return random.randint(2, 50) if jestWiecejNizJeden else 1

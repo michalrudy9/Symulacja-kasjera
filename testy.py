@@ -145,4 +145,4 @@ class Test(unittest.TestCase):
 
             root.update()
 
-            self.assertEqual(main.koniec, False)
+            self.assertEqual(main.koniec, True)

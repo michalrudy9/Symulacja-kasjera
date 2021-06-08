@@ -133,7 +133,7 @@ class Grafika:
         wspY=random.randint(0, 420)
         self.przyciskNaTowar.place(x=wspX, y=wspY, height=60, width=150)
 
-    def pokazPrzegralesInformacje(self, wynikSrednia):
+    def pokazPrzegralesInformacje(self):
         """Metoda wyświetla informacje o przegranej"""
         self.poleTekstowe.place_forget()
         self.przyciskNaTowar.place_forget()
